@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: purple;
+}
+
+section {
+  background-color: royalblue;
+}
+
+article {
+  background-color: chocolate;
+}
+
+footer {
+  background-color: darkgray;
+}
