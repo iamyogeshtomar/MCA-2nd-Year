@@ -21,22 +21,34 @@
 // console.log(x == y);
 // console.log(x === y);
 
-var str = 2 + "2";
-var str1 = 2 - "str";
+// var str = 2 + "2";
+// var str1 = 2 - "str";
 
-var a = 20 + "31" - 12 - true;
+// var a = 20 + "31" - 12 - true;
 
-var s = 2 + "2";
-let s1 = 2 - "2";
+// var s = 2 + "2";
+// let s1 = 2 - "2";
 
 // let s1 = "Hello World!!";
 
-console.log(s1);
+// console.log(s1);
 
-console.log(typeof s1.toString());
+// console.log(typeof s1.toString());
 
-console.log(typeof str1.toString());
+// console.log(typeof str1.toString());
 
-for (var i = 0; i < 10; i++) {
-  console.log(i);
+// for (var i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+
+console.log(typeof ("2" + 2));
+console.log(typeof (2 + "2" + (3 + "3") - 25));
+console.log(typeof (2 - "Str"));
+
+console.log(2 + "5" - 3 * 2 - true);
+
+console.log(typeof 12356789098643212357890n);
+
+for (var i = 0; i < 15; i++) {
+  console.log(++i);
 }
