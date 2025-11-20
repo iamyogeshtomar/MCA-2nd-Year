@@ -1,9 +1,13 @@
 const express = require(`express`);
 const app = express();
+const path = require(`path`);
 const PORT = 3000;
 
+app.use(express.urlencoded({ extended: true }));
+
+
 app.get(`/`, (req, res) => {
-    console.log(`Server working`);
+    // console.log(`Server working`);
     res.send(`<h1>Server is working fine!!!</h1>`);
 });
 
@@ -12,12 +16,10 @@ app.get(`/checkNetwork`, (req, res) => {
 });
 
 // path parameters
-app.get (`/:username/:city/:age`, (req, res)=>{
+app.get(`/:username/:city/:age`, (req, res) => {
     console.log(req.params);
     res.end();
-})
-
-
+});
 
 // query parameters
 
@@ -28,6 +30,15 @@ app.get(`/query`, (req, res) => {
 });
 
 // request body
+
+app.get(`/form`, (req, res) => {
+    res.sendFile(path.resolve(__dirname, `index.html`));
+});
+
+app.post(`/form`, (req, res) => {
+    console.log(req.body);
+    res.redirect(`/`);
+});
 
 
 app.listen(PORT, () => {
