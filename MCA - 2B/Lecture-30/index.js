@@ -16,11 +16,14 @@ const PORT = 3000;
     }
 })();
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const userRoutes = require(`./Routes/userRoutes.js`);
+const productRoutes = require(`./Routes/productRoutes.js`);
 
+app.use(`/products`, productRoutes);
 app.use(`/user`, userRoutes);
 
 app.get(`/`, (req, res) => {

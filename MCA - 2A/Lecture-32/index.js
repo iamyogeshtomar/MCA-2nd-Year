@@ -1,26 +1,26 @@
 const express = require(`express`);
 const app = express();
-const path = require(`path`);
 const mongoose = require(`mongoose`);
+const path = require(`path`);
 const PORT = 3000;
 
 // IIFE - Immediately invoking function expressions
-
 (async () => {
     try {
-        await mongoose.connect(`mongodb://127.0.0.1:27017/MCA-2B`);
+        await mongoose.connect(`mongodb://127.0.0.1:27017/MCA-2A`);
         console.log(`Database connected successfully!!!`);
-    }
-    catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
     }
 })();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const productRoutes = require(`./Routes/productRoutes.js`);
 const userRoutes = require(`./Routes/userRoutes.js`);
 
+app.use(`/products`, productRoutes);
 app.use(`/user`, userRoutes);
 
 app.get(`/`, (req, res) => {
